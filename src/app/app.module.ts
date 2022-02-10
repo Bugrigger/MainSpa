@@ -8,10 +8,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { AuthComponent } from './auth/auth.component';
+import { AuthFormComponent } from './auth/auth-form/auth-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

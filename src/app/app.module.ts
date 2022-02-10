@@ -8,16 +8,19 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
-import { AuthComponent } from './auth/auth.component';
-import { AuthFormComponent } from './auth/auth-form/auth-form.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AuthFormComponent } from './auth-form/auth-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
+    AuthFormComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    RouterModule.forRoot([]),
     StoreModule.forRoot(reducers, {
       metaReducers
     }),

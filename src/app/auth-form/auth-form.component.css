@@ -38,3 +38,6 @@
     background: #285c28;
     cursor: pointer;
 }
+.none {
+    display: none;
+}

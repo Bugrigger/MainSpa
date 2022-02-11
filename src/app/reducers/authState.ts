@@ -1,4 +1,4 @@
-import { createAction, createReducer, on, reduceState, State } from "@ngrx/store";
+import { createAction, createFeatureSelector, createReducer, createSelector, on, reduceState, State } from "@ngrx/store";
 
 
 export const adminStatus = createAction('[AUTHSTATE] adminStatus');
@@ -8,9 +8,6 @@ export const authStatus = createAction('[AUTHSTATE] authStatus');
 export interface adminStatus {
     admin: boolean;
     auth: boolean;
-}
-export interface authStatus {
-
 }
 
 export const initialState: adminStatus = {
@@ -28,6 +25,11 @@ export const UserStatusReducer = createReducer(initialState,
         auth: true
     })),
 );
+
+// export const authStatusSelector = createFeatureSelector<adminStatus>('authState');
+// export const statusSelector = createSelector(
+//     authStatusSelector,
+//     admin => admin.admin);
 
 
 

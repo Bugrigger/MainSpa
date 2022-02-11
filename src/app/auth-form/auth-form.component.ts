@@ -12,6 +12,7 @@ export class AuthFormComponent implements OnInit {
   login = '';
   password = '';
 
+
   admin = {
     login: 'admin',
     password: '123',
@@ -31,6 +32,7 @@ export class AuthFormComponent implements OnInit {
 
   isAdmin() {
     console.log('Вы вошли как администратор');
+
   }
   isUser() {
     console.log('Вы вошли как пользователь');

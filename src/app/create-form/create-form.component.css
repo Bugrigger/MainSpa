@@ -25,7 +25,30 @@
 }
 span {
     display: block;
+    margin-top: 10px;
 }
 .hide {
     display: none;
+}
+
+.main-company {
+    text-align: center;
+    width: 300px;
+    background: rgb(235, 235, 235);
+    margin: 50px 50px;
+    padding: 20px 0;
+    border-radius: 25px;
+}
+.main-company__form {
+    text-align: center;
+    margin: 0 auto;
+}
+.create-form__item {
+}
+.create-form__btn {
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+}
+.create-form__btn:last-child {
+    margin-left: 10px;
 }

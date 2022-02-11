@@ -5,36 +5,36 @@
 
 <div *ngIf="count" class="main-company">
   <span>Добавить головную организацию</span>
-  <form action="#" class="main-company__form">
+  <form action="#" class="main-company__form create-form">
     <div>
       <span>Полное наименование</span>
-      <input type="text" name="fullname">
+      <input type="text" name="fullname" class="create-form__item">
     </div>
     <div>
       <span>Сокращенное наименование</span>
-      <input type="text" name="shortname">
+      <input type="text" name="shortname" class="create-form__item">
     </div>
     <div>
       <span>ИНН</span>
-      <input type="text" name="INN">
+      <input type="text" name="INN" class="create-form__item">
     </div>
     <div>
       <span>КПП</span>
-      <input type="text" name="KPP">
+      <input type="text" name="KPP" class="create-form__item">
     </div>
     <div>
       <span>Учредитель(ФИО)</span>
-      <input type="text" name="CEO">
+      <input type="text" name="CEO" class="create-form__item">
     </div>
     <div>
       <span>Адрес</span>
-      <input type="text" name="address">
+      <input type="text" name="address" class="create-form__item">
     </div>
     <div>
       <span>Телефон</span>
-      <input type="text" name="phone">
+      <input type="text" name="phone" class="create-form__item">
     </div>
-    <button>Добавить</button>
-    <button (click)="onClick()">Отмена</button>
+    <button class="create-form__btn">Добавить</button>
+    <button class="create-form__btn" (click)="onClick()">Отмена</button>
   </form>
 </div>

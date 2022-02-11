@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { adminStatus, userStatus } from '../reducers/authState';
 
@@ -25,7 +26,7 @@ export class AuthFormComponent implements OnInit {
     adminStatus: false
   }
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private router: Router) { }
 
   ngOnInit() {
   }
@@ -39,6 +40,7 @@ export class AuthFormComponent implements OnInit {
   }
   isAuth() {
     console.log("Авторизация успешна");
+    this.router.navigate(['/content']);
   }
 
   onSubmit() {

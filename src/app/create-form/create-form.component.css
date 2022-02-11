@@ -1,0 +1,31 @@
+.add__company {
+    background: rgb(139, 139, 139);
+    width: auto;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+}
+.add__btn {
+    margin: 0 0 0 20px;
+    width: auto;
+    height: 40px;
+    align-self: center;
+    border-radius: 10px;
+    background: rgb(226, 226, 226);
+    border: 2px solid rgb(226, 226, 226);
+    padding: 0 13px;
+}
+.add__btn:hover {
+    background: #fff;
+    border: 2px solid #4caf50;
+    transition: border 0.4s;
+}
+.add__btn:active {
+    background: #4caf50;
+}
+span {
+    display: block;
+}
+.hide {
+    display: none;
+}

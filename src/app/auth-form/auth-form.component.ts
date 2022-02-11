@@ -28,6 +28,7 @@ export class AuthFormComponent implements OnInit {
 
   constructor(private store: Store, private router: Router) { }
 
+
   ngOnInit() {
   }
 
@@ -49,8 +50,8 @@ export class AuthFormComponent implements OnInit {
       if (this.admin.adminStatus) {
         this.isAdmin();
         this.store.dispatch(adminStatus());
-        // localStorage.setItem('admin', 'true');
-        // localStorage.setItem('auth', 'true');
+        localStorage.setItem('admin', 'true');
+        localStorage.setItem('auth', 'true');
       }
       this.login = this.password = '';
       return;
@@ -61,8 +62,8 @@ export class AuthFormComponent implements OnInit {
       if (!this.user.adminStatus) {
         this.isUser();
         this.store.dispatch(userStatus());
-        // localStorage.setItem('admin', 'false');
-        // localStorage.setItem('auth', 'true');
+        localStorage.setItem('admin', 'false');
+        localStorage.setItem('auth', 'true');
       }
       this.login = this.password = '';
       return;

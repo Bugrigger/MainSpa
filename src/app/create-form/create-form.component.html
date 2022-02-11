@@ -1,5 +1,40 @@
-<div class="">
-  <form action="" class="create__form">
+<div class="add__company">
+  <button class="add__btn" (click)="onClick()">Добавить головную организацию</button>
+  <button class="add__btn">Добавить филиал</button>
+</div>
 
+<div *ngIf="count" class="main-company">
+  <span>Добавить головную организацию</span>
+  <form action="#" class="main-company__form">
+    <div>
+      <span>Полное наименование</span>
+      <input type="text" name="fullname">
+    </div>
+    <div>
+      <span>Сокращенное наименование</span>
+      <input type="text" name="shortname">
+    </div>
+    <div>
+      <span>ИНН</span>
+      <input type="text" name="INN">
+    </div>
+    <div>
+      <span>КПП</span>
+      <input type="text" name="KPP">
+    </div>
+    <div>
+      <span>Учредитель(ФИО)</span>
+      <input type="text" name="CEO">
+    </div>
+    <div>
+      <span>Адрес</span>
+      <input type="text" name="address">
+    </div>
+    <div>
+      <span>Телефон</span>
+      <input type="text" name="phone">
+    </div>
+    <button>Добавить</button>
+    <button (click)="onClick()">Отмена</button>
   </form>
 </div>

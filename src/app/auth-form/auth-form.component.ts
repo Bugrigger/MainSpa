@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { adminStatus, userStatus } from '../reducers/authState';
 
 @Component({
   selector: 'app-auth-form',
@@ -22,31 +24,46 @@ export class AuthFormComponent implements OnInit {
     adminStatus: false
   }
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit() {
   }
 
+  isAdmin() {
+    console.log('Вы вошли как администратор');
+  }
+  isUser() {
+    console.log('Вы вошли как пользователь');
+  }
+  isAuth() {
+    console.log("Авторизация успешна");
+  }
+
   onSubmit() {
     if (this.login === this.admin.login && this.password === this.admin.password) {
-      console.log("Авторизация успешна");
+      this.isAuth();
       if (this.admin.adminStatus) {
-        console.log('Вы вошли как администратор');
-        localStorage.setItem('admin', 'true');
+        this.isAdmin();
+        this.store.dispatch(adminStatus());
+        // localStorage.setItem('admin', 'true');
+        // localStorage.setItem('auth', 'true');
       }
       this.login = this.password = '';
       return;
     }
     // -------------------------------------
     if (this.login === this.user.login && this.password === this.user.password) {
-      console.log("Авторизация успешна");
+      this.isAuth();
       if (!this.user.adminStatus) {
-        console.log('Вы вошли как пользователь');
-        localStorage.setItem('admin', 'false')
+        this.isUser();
+        this.store.dispatch(userStatus());
+        // localStorage.setItem('admin', 'false');
+        // localStorage.setItem('auth', 'true');
       }
       this.login = this.password = '';
       return;
     } else {
+      alert('Вы ввели неверные данные')
       console.log('Вы ввели неверные данные');
       this.login = this.password = '';
     }

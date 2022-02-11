@@ -12,7 +12,7 @@ export class CreateFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  count = true;
+  count = false;
 
   onClick() {
     if (!this.count) {

@@ -14,21 +14,24 @@ import { AuthFormComponent } from './auth-form/auth-form.component';
 import { ContentComponent } from './content/content.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { CompanyListComponent } from './company-list/company-list.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: AuthFormComponent },
-  { path: 'content', component: ContentComponent }
+  { path: 'content', component: ContentComponent },
+  { path: 'add-company', component: CreateFormComponent }
 ];
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
     AuthFormComponent,
     ContentComponent,
-      CreateFormComponent,
-      EditFormComponent
-   ],
+    CreateFormComponent,
+    EditFormComponent,
+    CompanyListComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,

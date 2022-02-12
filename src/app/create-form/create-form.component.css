@@ -31,7 +31,7 @@ span {
     display: none;
 }
 
-.main-company {
+.add-company {
     text-align: center;
     width: 300px;
     background: rgb(235, 235, 235);
@@ -39,9 +39,7 @@ span {
     padding: 20px 0;
     border-radius: 25px;
 }
-.main-company__form {
-    text-align: center;
-    margin: 0 auto;
+.add-company__form {
 }
 .create-form__item {
 }
@@ -51,4 +49,11 @@ span {
 }
 .create-form__btn:last-child {
     margin-left: 10px;
+}
+
+.filial {
+}
+.filial__form {
+}
+.filial__item {
 }

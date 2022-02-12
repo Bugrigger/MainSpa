@@ -1,9 +1,9 @@
 <div class="add__company">
-  <button class="add__btn" (click)="onClick()">Добавить головную организацию</button>
-  <button class="add__btn">Добавить филиал</button>
+  <button class="add__btn" (click)="addMianCompany()">Добавить головную организацию</button>
+  <button class="add__btn" (click)="addSecondCompany()">Добавить филиал</button>
 </div>
 
-<div *ngIf="count" class="main-company">
+<div *ngIf="mainCompanyForm" class="add-company">
   <span>Добавить головную организацию</span>
   <form action="#" class="main-company__form create-form">
     <div>
@@ -35,6 +35,25 @@
       <input type="text" name="phone" class="create-form__item">
     </div>
     <button class="create-form__btn">Добавить</button>
-    <button class="create-form__btn" (click)="onClick()">Отмена</button>
+    <button class="create-form__btn" (click)="addMianCompany()">Отмена</button>
+  </form>
+</div>
+
+<div *ngIf="secondCompanyForm" class="add-company">
+  <form action="#" class="filial__form">
+    <div>
+      <span>Адрес офиса</span>
+      <input type="text" name="filialAddress" class="filial__item">
+    </div>
+    <div>
+      <span>Телефон</span>
+      <input type="text" name="filialPhone" class="filial__item">
+    </div>
+    <div>
+      <span>Должностное лицо(ФИО)</span>
+      <input type="text" name="administrator" class="filial__item">
+    </div>
+    <button class="create-form__btn">Добавить</button>
+    <button class="create-form__btn" (click)="addSecondCompany()">Отмена</button>
   </form>
 </div>

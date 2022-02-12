@@ -26,10 +26,10 @@ export const UserStatusReducer = createReducer(initialState,
     })),
 );
 
-// export const authStatusSelector = createFeatureSelector<adminStatus>('authState');
-// export const statusSelector = createSelector(
-//     authStatusSelector,
-//     admin => admin.admin);
+export const authStatusSelector = createFeatureSelector<adminStatus>('authState');
+export const statusSelector = createSelector(
+    authStatusSelector,
+    admin => admin.admin);
 
 
 

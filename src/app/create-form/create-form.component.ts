@@ -12,15 +12,24 @@ export class CreateFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  count = false;
+  mainCompanyForm = false;
+  secondCompanyForm = false;
 
-  onClick() {
-    if (!this.count) {
-      this.count = true
+  addMianCompany() {
+    if (!this.mainCompanyForm) {
+      this.mainCompanyForm = true
+      this.secondCompanyForm = false
     } else {
-      this.count = false
+      this.mainCompanyForm = false
     }
-
+  };
+  addSecondCompany() {
+    if (!this.secondCompanyForm) {
+      this.secondCompanyForm = true
+      this.mainCompanyForm = false
+    } else {
+      this.secondCompanyForm = false
+    }
   }
 
 }

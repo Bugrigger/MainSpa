@@ -1,21 +1,26 @@
-import { createReducer } from "@ngrx/store";
-import { filialCompany } from "../model/filial";
+import { createAction, createReducer, on } from "@ngrx/store";
 
 
-export const FILIAL_REDUCER = 'filialCompany';
+// export const FILIAL_REDUCER = 'filialCompany';
+export const createFilial = createAction('[ADD_FILIAL] createFilial');
 
-export interface filialState {
-    idChange: number;
-    filialList: filialCompany[];
-}
-
-
-export const initialState: filialState = {
-    idChange: 1,
-    filialList: []
+export interface filialCompany {
+    id: number;
+    filialAddress: string;
+    filialPhone: string;
+    administrator: string;
 };
 
-export const FilialReducer = createReducer(initialState);
+
+export const initialState: filialCompany = {
+    id: 1,
+    filialAddress: '',
+    filialPhone: '',
+    administrator: ''
+};
+
+export const FilialReducer = createReducer(initialState
+);
 
 // export const filialReduser = (filialState: any) => {
 //     return filialState;

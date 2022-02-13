@@ -15,6 +15,7 @@ import { ContentComponent } from './content/content.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
+import { filialReducer, FILIAL_REDUCER_NODE } from './store/filial/filial.reducer';
 
 
 const appRoutes: Routes = [
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     ContentComponent,
     CreateFormComponent,
     EditFormComponent,
-    CompanyListComponent
+    CompanyListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
+    StoreModule.forFeature(FILIAL_REDUCER_NODE, filialReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects])
   ],

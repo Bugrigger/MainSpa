@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { createFilial } from '../reducers/create-filial';
 
 @Component({
   selector: 'app-create-form',
@@ -44,7 +43,7 @@ export class CreateFormComponent implements OnInit {
     console.log(this.filialAddress);
     console.log(this.filialPhone);
     console.log(this.administrator);
-    this.store.dispatch(createFilial())
+
 
   }
 

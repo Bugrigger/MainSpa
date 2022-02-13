@@ -1,4 +1,5 @@
 import { filialCompany } from "src/app/model/filial";
+import { filialActions, filialActionsType } from "./filial.actions";
 
 export const FILIAL_REDUCER_NODE = 'filial';
 
@@ -12,8 +13,26 @@ export const initialState: filialState = {
     filialList: []
 }
 
-export const filialReducer = (state = initialState, action: any) => {
-    return state;
+export const filialReducer = (state = initialState, action: filialActions) => {
+
+    switch (action.type) {
+        case filialActionsType.create:
+            return {
+                ...state,
+                idIncrement: state.idIncrement + 1,
+                filialList: [
+                    ...state.filialList,
+                    {
+                        id: state.idIncrement,
+                        filialAddress: action.payload.filialAddress,
+                        filialPhone: action.payload.filialPhone,
+                        administrator: action.payload.administrator
+                    }
+                ]
+            };
+        default:
+            return state;
+    }
 };
 
 

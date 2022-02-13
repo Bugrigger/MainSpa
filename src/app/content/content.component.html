@@ -1,1 +1,3 @@
-<app-create-form *ngIf="isAdmin"></app-create-form>
+<app-create-form *ngIf="isAdmin" (filialAddressCreate)="createFilial($event, $event, $event)">
+</app-create-form>
+<p>Здесь будут филиалы</p>

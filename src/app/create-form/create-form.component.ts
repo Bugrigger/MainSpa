@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -15,7 +15,6 @@ export class CreateFormComponent implements OnInit {
 
   mainCompanyForm = false;
   secondCompanyForm = false;
-
 
   addMianCompany() {
     if (!this.mainCompanyForm) {
@@ -39,12 +38,17 @@ export class CreateFormComponent implements OnInit {
   filialPhone = '';
   administrator = '';
 
+  @Output()
+  filialAddressCreate = new EventEmitter<string>();
+  filialPhoneCreate = new EventEmitter<string>();
+  administratorCreate = new EventEmitter<string>();
+
   createFilial() {
-    console.log(this.filialAddress);
-    console.log(this.filialPhone);
-    console.log(this.administrator);
+    this.filialAddressCreate.emit(this.filialAddress);
+    this.filialPhoneCreate.emit(this.filialPhone);
+    this.administratorCreate.emit(this.administrator);
 
-
+    this.filialAddress = this.filialPhone = this.administrator = '';
   }
 
 

@@ -53,7 +53,7 @@
       <span>Должностное лицо(ФИО)</span>
       <input type="text" name="administrator" class="filial__item" [(ngModel)]="administrator">
     </div>
-    <button class="create-form__btn" (click)="createFilial()">Добавить</button>
+    <button class="create-form__btn" (click)="createFilial()" [disabled]="!filialAddress">Добавить</button>
     <button class="create-form__btn" (click)="addSecondCompany()">Отмена</button>
   </form>
 </div>

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { statusSelector } from '../reducers/authState';
 
 @Component({
   selector: 'app-create-form',
@@ -33,6 +34,8 @@ export class CreateFormComponent implements OnInit {
       this.secondCompanyForm = false
     }
   }
+
+  isAdmin = this.store.pipe(select(statusSelector));
 
   filialAddress = '';
   filialPhone = '';

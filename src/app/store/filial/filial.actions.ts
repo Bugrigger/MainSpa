@@ -8,9 +8,7 @@ export enum filialActionsType {
 export class filialCreateAction implements Action {
     readonly type = filialActionsType.create;
 
-    constructor(public payload: {
-        filial: object;
-    }) {
+    constructor(public payload: { filial: object }) {
 
     }
 }

@@ -13,18 +13,28 @@ import { filialListSelector } from '../store/filial/selectors';
 })
 export class ContentComponent implements OnInit {
 
-  constructor(private store$: Store<filialState>) { }
+  // constructor(private store$: Store<filialState>) { }
 
+  ;
+
+  constructor(private store$: Store<filialState>) {
+
+  }
+
+  filialList$: Observable<any> = this.store$.pipe(select(filialListSelector));
 
 
   filialList = [];
-  filialList$: Observable<filialCompany[]> = this.store$.pipe(select(filialListSelector));
+
+
 
   ngOnInit() {
   }
 
   createFilial(filial: {}) {
     console.log(filial);
+    console.log(this.filialList$);
+
     // console.log(filialPhone);
     // console.log(administrator);
     this.store$.dispatch(new filialCreateAction({ filial }));

@@ -37,7 +37,7 @@ export const filialReducer = (state = initialState, action: filialActions) => {
                     ...state.filialList,
                     {
                         id: state.idIncrement,
-                        filial: action.payload.filial,
+                        ...action.payload.filial,
                     }
                 ]
             };

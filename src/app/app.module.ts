@@ -16,6 +16,7 @@ import { CreateFormComponent } from './create-form/create-form.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { filialReducer, FILIAL_REDUCER_NODE } from './store/filial/filial.reducer';
+import { RenderFilialComponent } from './renderFilial/renderFilial.component';
 
 
 const appRoutes: Routes = [
@@ -25,15 +26,15 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     AuthFormComponent,
     ContentComponent,
     CreateFormComponent,
     EditFormComponent,
     CompanyListComponent,
-
-  ],
+      RenderFilialComponent
+   ],
   imports: [
     BrowserModule,
     FormsModule,

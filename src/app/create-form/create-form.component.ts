@@ -37,19 +37,27 @@ export class CreateFormComponent implements OnInit {
 
   isAdmin = this.store.pipe(select(statusSelector));
 
+  filialObj = {
+    filialAddress: '',
+    filialPhone: '',
+    administrator: '',
+  }
+
   filialAddress = '';
   filialPhone = '';
   administrator = '';
 
   @Output()
-  filialAddressCreate = new EventEmitter<string>();
-  filialPhoneCreate = new EventEmitter<string>();
-  administratorCreate = new EventEmitter<string>();
+  filialAddressCreate = new EventEmitter<object>();
+  // @Output()
+  // filialPhoneCreate = new EventEmitter<string>();
+  // @Output()
+  // administratorCreate = new EventEmitter<string>();
 
   createFilial() {
-    this.filialAddressCreate.emit(this.filialAddress);
-    this.filialPhoneCreate.emit(this.filialPhone);
-    this.administratorCreate.emit(this.administrator);
+    this.filialAddressCreate.emit(this.filialObj);
+    // this.filialPhoneCreate.emit(this.filialPhone);
+    // this.administratorCreate.emit(this.administrator);
 
     this.filialAddress = this.filialPhone = this.administrator = '';
   }

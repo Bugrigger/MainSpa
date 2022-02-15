@@ -9,8 +9,21 @@ export interface filialState {
 };
 
 export const initialState: filialState = {
-    idIncrement: 1,
-    filialList: []
+    idIncrement: 2,
+    filialList: [
+        {
+            id: 1,
+            filialAddress: 'Мира 26',
+            filialPhone: '+7(963)214-56-31',
+            administrator: 'Гайдулян И.О'
+        },
+        {
+            id: 3,
+            filialAddress: 'Заречная 14',
+            filialPhone: '+7(912)569-10-52',
+            administrator: 'Вивикова Г.Ф'
+        }
+    ]
 }
 
 export const filialReducer = (state = initialState, action: filialActions) => {
@@ -24,9 +37,7 @@ export const filialReducer = (state = initialState, action: filialActions) => {
                     ...state.filialList,
                     {
                         id: state.idIncrement,
-                        filialAddress: action.payload.filialAddress,
-                        filialPhone: action.payload.filialPhone,
-                        administrator: action.payload.administrator
+                        filial: {},
                     }
                 ]
             };

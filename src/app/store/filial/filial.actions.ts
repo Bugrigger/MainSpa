@@ -9,7 +9,7 @@ export class filialCreateAction implements Action {
     readonly type = filialActionsType.create;
 
     constructor(public payload: {
-        filial: filialCompany[];
+        filial: object;
     }) {
 
     }

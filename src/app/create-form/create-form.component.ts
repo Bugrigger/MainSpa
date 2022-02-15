@@ -35,7 +35,8 @@ export class CreateFormComponent implements OnInit {
     }
   }
 
-  isAdmin = this.store.pipe(select(statusSelector));
+  // isAdmin = this.store.pipe(select(statusSelector));
+  isAdmin = true;
 
   filialObj = {
     filialAddress: '',
@@ -43,26 +44,36 @@ export class CreateFormComponent implements OnInit {
     administrator: '',
   }
 
-  filialAddress = '';
-  filialPhone = '';
-  administrator = '';
+  // filialAddress = '';
+  // filialPhone = '';
+  // administrator = '';
 
   @Output()
-  filialAddressCreate = new EventEmitter<object>();
+  filialCreate = new EventEmitter<object>();
   // @Output()
   // filialPhoneCreate = new EventEmitter<string>();
   // @Output()
   // administratorCreate = new EventEmitter<string>();
 
   createFilial() {
-    this.filialAddressCreate.emit(this.filialObj);
+    this.filialCreate.emit(this.filialObj);
     // this.filialPhoneCreate.emit(this.filialPhone);
     // this.administratorCreate.emit(this.administrator);
 
-    this.filialAddress = this.filialPhone = this.administrator = '';
+    // this.filialAddress = this.filialPhone = this.administrator = '';
   }
 
 
+  onCreate() {
+
+    this.filialCreate.emit(this.filialObj);
+    console.log(this.filialObj);
+    // this.filialPhoneCreate.emit(this.filialPhone);
+    // this.administratorCreate.emit(this.administrator);
+
+    // this.filialAddress = this.filialPhone = this.administrator = '';
+
+  }
 
 
 }

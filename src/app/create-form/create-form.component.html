@@ -1,6 +1,6 @@
 <div class="add__company">
-  <button *ngIf="isAdmin | async" class="add__btn" (click)="addMianCompany()">Добавить головную организацию</button>
-  <button *ngIf="isAdmin | async" class="add__btn" (click)="addSecondCompany()">Добавить филиал</button>
+  <button *ngIf="isAdmin" class="add__btn" (click)="addMianCompany()">Добавить головную организацию</button>
+  <button *ngIf="isAdmin " class="add__btn" (click)="addSecondCompany()">Добавить филиал</button>
 </div>
 
 <div *ngIf="mainCompanyForm" class="add-company">
@@ -40,20 +40,21 @@
 </div>
 
 <div *ngIf="secondCompanyForm" class="add-company">
-  <form action="#" class="filial__form">
+  <form action="#" class="filial__form" (ngSubmit)="onCreate()">
     <div>
       <span>Адрес офиса</span>
-      <input type="text" name="filialAddress" class="filial__item" [(ngModel)]="filialAddress">
+      <input type="text" name="filialAddress" class="filial__item" [(ngModel)]="filialObj.filialAddress">
     </div>
     <div>
       <span>Телефон</span>
-      <input type="text" name="filialPhone" class="filial__item" [(ngModel)]="filialPhone">
+      <input type="text" name="filialPhone" class="filial__item" [(ngModel)]="filialObj.filialPhone">
     </div>
     <div>
       <span>Должностное лицо(ФИО)</span>
-      <input type="text" name="administrator" class="filial__item" [(ngModel)]="administrator">
+      <input type="text" name="administrator" class="filial__item" [(ngModel)]="filialObj.administrator">
     </div>
-    <button class="create-form__btn" (click)="createFilial()" [disabled]="!filialAddress">Добавить</button>
+    <!-- <button class="create-form__btn" (click)="createFilial()" [disabled]="!filialAddress">Добавить</button> -->
+    <button class="create-form__btn" [disabled]="!filialObj.filialAddress">Добавить</button>
     <button class="create-form__btn" (click)="addSecondCompany()">Отмена</button>
   </form>
 </div>

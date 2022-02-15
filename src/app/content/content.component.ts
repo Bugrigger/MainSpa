@@ -27,7 +27,7 @@ export class ContentComponent implements OnInit {
     console.log(filial);
     // console.log(filialPhone);
     // console.log(administrator);
-    this.store$.dispatch(new filialCreateAction({ filial: [] }));
+    this.store$.dispatch(new filialCreateAction({ filial }));
   }
 
 }

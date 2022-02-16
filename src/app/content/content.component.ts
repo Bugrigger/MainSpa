@@ -5,6 +5,9 @@ import { filialCompany } from '../model/filial';
 import { filialCreateAction } from '../store/filial/filial.actions';
 import { filialState } from '../store/filial/filial.reducer';
 import { filialListSelector } from '../store/filial/selectors';
+import { mainCompanyCreateAction } from '../store/mainCompany/main-company.actions';
+import { mainCompanyState } from '../store/mainCompany/main-company.reduser';
+import { mainCompanySelector } from '../store/mainCompany/selectors';
 
 @Component({
   selector: 'app-content',
@@ -13,31 +16,21 @@ import { filialListSelector } from '../store/filial/selectors';
 })
 export class ContentComponent implements OnInit {
 
-  // constructor(private store$: Store<filialState>) { }
-
-  ;
-
-  constructor(private store$: Store<filialState>) {
-
-  }
+  constructor(private store$: Store) { }
 
   filialList$: Observable<any> = this.store$.pipe(select(filialListSelector));
 
-
-  filialList = [];
-
-
+  mainCompanyList$: Observable<any> = this.store$.pipe(select(mainCompanySelector));
 
   ngOnInit() {
   }
 
   createFilial(filial: {}) {
-    console.log(filial);
-    console.log(this.filialList$);
-
-    // console.log(filialPhone);
-    // console.log(administrator);
     this.store$.dispatch(new filialCreateAction({ filial }));
+  }
+
+  createMainCompany(mainCompany: {}) {
+    this.store$.dispatch(new mainCompanyCreateAction({ mainCompany }))
   }
 
 }

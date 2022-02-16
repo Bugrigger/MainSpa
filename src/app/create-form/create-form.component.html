@@ -8,39 +8,39 @@
   <form action="#" class="main-company__form create-form">
     <div>
       <span>Полное наименование</span>
-      <input type="text" name="fullname" class="create-form__item">
+      <input type="text" name="fullname" class="create-form__item" [(ngModel)]="mainCompanyObj.fullName">
     </div>
     <div>
       <span>Сокращенное наименование</span>
-      <input type="text" name="shortname" class="create-form__item">
+      <input type="text" name="shortname" class="create-form__item" [(ngModel)]="mainCompanyObj.shortName">
     </div>
     <div>
       <span>ИНН</span>
-      <input type="text" name="INN" class="create-form__item">
+      <input type="text" name="INN" class="create-form__item" [(ngModel)]="mainCompanyObj.inn">
     </div>
     <div>
       <span>КПП</span>
-      <input type="text" name="KPP" class="create-form__item">
+      <input type="text" name="KPP" class="create-form__item" [(ngModel)]="mainCompanyObj.kpp">
     </div>
     <div>
       <span>Учредитель(ФИО)</span>
-      <input type="text" name="CEO" class="create-form__item">
+      <input type="text" name="CEO" class="create-form__item" [(ngModel)]="mainCompanyObj.ceo">
     </div>
     <div>
       <span>Адрес</span>
-      <input type="text" name="address" class="create-form__item">
+      <input type="text" name="address" class="create-form__item" [(ngModel)]="mainCompanyObj.mainCompanyAddress">
     </div>
     <div>
       <span>Телефон</span>
-      <input type="text" name="phone" class="create-form__item">
+      <input type="text" name="phone" class="create-form__item" [(ngModel)]="mainCompanyObj.mainCompanyPhone">
     </div>
-    <button class="create-form__btn">Добавить</button>
+    <button class="create-form__btn" (click)="createMainCompany()">Добавить</button>
     <button class="create-form__btn" (click)="addMianCompany()">Отмена</button>
   </form>
 </div>
 
 <div *ngIf="secondCompanyForm" class="add-company">
-  <form action="#" class="filial__form" (ngSubmit)="onCreate()">
+  <form action="#" class="filial__form">
     <div>
       <span>Адрес офиса</span>
       <input type="text" name="filialAddress" class="filial__item" [(ngModel)]="filialObj.filialAddress">
@@ -54,7 +54,8 @@
       <input type="text" name="administrator" class="filial__item" [(ngModel)]="filialObj.administrator">
     </div>
     <!-- <button class="create-form__btn" (click)="createFilial()" [disabled]="!filialAddress">Добавить</button> -->
-    <button class="create-form__btn" [disabled]="!filialObj.filialAddress">Добавить</button>
+    <button class="create-form__btn" type="submit" (click)="createFilial()"
+      [disabled]="!filialObj.filialAddress">Добавить</button>
     <button class="create-form__btn" (click)="addSecondCompany()">Отмена</button>
   </form>
 </div>

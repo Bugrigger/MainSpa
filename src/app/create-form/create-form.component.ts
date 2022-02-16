@@ -42,37 +42,47 @@ export class CreateFormComponent implements OnInit {
     filialAddress: '',
     filialPhone: '',
     administrator: '',
-  }
+  };
 
-  // filialAddress = '';
-  // filialPhone = '';
-  // administrator = '';
+  mainCompanyObj = {
+    fullName: '',
+    shortName: '',
+    inn: '',
+    kpp: '',
+    ceo: '',
+    mainCompanyAddress: '',
+    mainCompanyPhone: ''
+  };
 
   @Output()
   filialCreate = new EventEmitter<object>();
-  // @Output()
-  // filialPhoneCreate = new EventEmitter<string>();
-  // @Output()
-  // administratorCreate = new EventEmitter<string>();
+  @Output()
+  mainCompanyCreate = new EventEmitter<object>();
 
-  createFilial() {
-    this.filialCreate.emit(this.filialObj);
-    // this.filialPhoneCreate.emit(this.filialPhone);
-    // this.administratorCreate.emit(this.administrator);
 
-    // this.filialAddress = this.filialPhone = this.administrator = '';
+  createMainCompany() {
+    this.mainCompanyCreate.emit(this.mainCompanyObj);
+
+    // this.mainCompanyObj = {
+    //   fullName: '',
+    //   shortName: '',
+    //   inn: '',
+    //   kpp: '',
+    //   ceo: '',
+    //   mainCompanyAddress: '',
+    //   mainCompanyPhone: ''
+    // }
   }
 
-
-  onCreate() {
+  createFilial() {
 
     this.filialCreate.emit(this.filialObj);
-    console.log(this.filialObj);
-    // this.filialPhoneCreate.emit(this.filialPhone);
-    // this.administratorCreate.emit(this.administrator);
 
-    // this.filialAddress = this.filialPhone = this.administrator = '';
-
+    this.filialObj = {
+      filialAddress: '',
+      filialPhone: '',
+      administrator: ''
+    };
   }
 
 

@@ -17,6 +17,9 @@ import { EditFormComponent } from './edit-form/edit-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { filialReducer, FILIAL_REDUCER_NODE } from './store/filial/filial.reducer';
 import { RenderFilialComponent } from './renderFilial/renderFilial.component';
+import { HeaderComponent } from './header/header.component';
+import { mainCompanyReducer, MAIN_COMPANY_REDUCER_NODE } from './store/mainCompany/main-company.reduser';
+import { RenderMainCompanyComponent } from './renderMainCompany/renderMainCompany.component';
 
 
 const appRoutes: Routes = [
@@ -33,7 +36,9 @@ const appRoutes: Routes = [
     CreateFormComponent,
     EditFormComponent,
     CompanyListComponent,
-      RenderFilialComponent
+    RenderFilialComponent,
+    HeaderComponent,
+      RenderMainCompanyComponent
    ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ const appRoutes: Routes = [
       metaReducers
     }),
     StoreModule.forFeature(FILIAL_REDUCER_NODE, filialReducer),
+    StoreModule.forFeature(MAIN_COMPANY_REDUCER_NODE, mainCompanyReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects])
   ],

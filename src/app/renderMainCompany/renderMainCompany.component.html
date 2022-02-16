@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let mainCompany of mainCompanyList">
+    <p>Полное наименование: {{ mainCompany.fullName }}</p>
+    <p>Сокращенное наименование:{{ mainCompany.shortName }}</p>
+    <p>ИНН:{{ mainCompany.inn }}</p>
+    <p>КПП:{{ mainCompany.kpp }}</p>
+    <p>Учредитель(ФИО):{{ mainCompany.ceo }}</p>
+    <p>Адрес:{{ mainCompany.mainCompanyAddress }}</p>
+    <p>Телефон:{{ mainCompany.mainCompanyPhone }}</p>
+  </li>
+</ul>

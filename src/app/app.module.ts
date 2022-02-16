@@ -29,7 +29,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     AuthFormComponent,
     ContentComponent,
@@ -38,8 +38,8 @@ const appRoutes: Routes = [
     CompanyListComponent,
     RenderFilialComponent,
     HeaderComponent,
-      RenderMainCompanyComponent
-   ],
+    RenderMainCompanyComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -47,8 +47,9 @@ const appRoutes: Routes = [
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
-    StoreModule.forFeature(FILIAL_REDUCER_NODE, filialReducer),
     StoreModule.forFeature(MAIN_COMPANY_REDUCER_NODE, mainCompanyReducer),
+    StoreModule.forFeature(FILIAL_REDUCER_NODE, filialReducer),
+    // StoreModule.forFeature(MAIN_COMPANY_REDUCER_NODE, mainCompanyReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects])
   ],

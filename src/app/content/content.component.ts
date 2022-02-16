@@ -7,7 +7,7 @@ import { filialState } from '../store/filial/filial.reducer';
 import { filialListSelector } from '../store/filial/selectors';
 import { mainCompanyCreateAction } from '../store/mainCompany/main-company.actions';
 import { mainCompanyState } from '../store/mainCompany/main-company.reduser';
-import { mainCompanySelector } from '../store/mainCompany/selectors';
+import { mainCompanyListSelector, mainCompanySelector } from '../store/mainCompany/selectors';
 
 @Component({
   selector: 'app-content',
@@ -20,7 +20,7 @@ export class ContentComponent implements OnInit {
 
   filialList$: Observable<any> = this.store$.pipe(select(filialListSelector));
 
-  mainCompanyList$: Observable<any> = this.store$.pipe(select(mainCompanySelector));
+  mainCompanyList$: Observable<any> = this.store$.pipe(select(mainCompanyListSelector));
 
   ngOnInit() {
   }
@@ -31,6 +31,8 @@ export class ContentComponent implements OnInit {
 
   createMainCompany(mainCompany: {}) {
     this.store$.dispatch(new mainCompanyCreateAction({ mainCompany }))
+    console.log(mainCompany);
+
   }
 
 }

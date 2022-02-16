@@ -9,7 +9,6 @@ import { mainCompany } from '../model/main-company';
 })
 export class RenderMainCompanyComponent implements OnInit {
 
-
   @Input()
   mainCompanyList: mainCompany[] = [];
 

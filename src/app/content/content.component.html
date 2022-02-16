@@ -1,4 +1,4 @@
-<app-create-form (filialCreate)="createFilial($event)">
+<app-create-form (filialCreate)="createFilial($event)" (mainCompanyCreate)="createMainCompany($event)">
 </app-create-form>
 
 <app-renderMainCompany [mainCompanyList]="mainCompanyList$ |async"></app-renderMainCompany>

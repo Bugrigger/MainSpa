@@ -63,6 +63,9 @@ export class CreateFormComponent implements OnInit {
   createMainCompany() {
     this.mainCompanyCreate.emit(this.mainCompanyObj);
 
+    console.log(this.mainCompanyObj);
+
+
     // this.mainCompanyObj = {
     //   fullName: '',
     //   shortName: '',

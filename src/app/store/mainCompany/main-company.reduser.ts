@@ -2,7 +2,7 @@ import { mainCompany } from "src/app/model/main-company";
 import { mainCompanyActions, mainCompanyActionsType } from "./main-company.actions";
 
 
-export const MAIN_COMPANY_REDUCER_NODE = 'main-company';
+export const MAIN_COMPANY_REDUCER_NODE = 'mainCompany';
 
 export interface mainCompanyState {
     idIncrement: number;
@@ -36,7 +36,7 @@ export const mainCompanyReducer = (state = initialState, action: mainCompanyActi
                     ...state.mainCompanyList,
                     {
                         id: state.idIncrement,
-                        ...action.payload.mainCompany,
+                        ...action.payload.mainCompany
                     }
                 ]
             };

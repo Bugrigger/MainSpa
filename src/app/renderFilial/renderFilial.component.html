@@ -1,7 +1,9 @@
-<ul>
-  <li *ngFor="let filialCompany of filialList">
-    <p>Адрес филиала: {{filialCompany.filialAddress}}</p>
-    <p>Телефон филиала:{{filialCompany.filialPhone}}</p>
-    <p>Администратор: {{filialCompany.administrator}}</p>
-  </li>
-</ul>
+<div class="filial-card" *ngFor="let filialCompany of filialList">
+  <ul>
+    <li>
+      <p>Адрес филиала: {{filialCompany.filialAddress}}</p>
+      <p>Телефон филиала:{{filialCompany.filialPhone}}</p>
+      <p>Администратор: {{filialCompany.administrator}}</p>
+    </li>
+  </ul>
+</div>

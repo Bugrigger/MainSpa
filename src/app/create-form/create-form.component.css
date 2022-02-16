@@ -12,15 +12,23 @@ span {
     display: none;
 }
 
-.add-company {
+.add-form-company {
+    position: absolute;
+    left: 30%;
+    top: 10%;
     text-align: center;
     width: 300px;
-    background: rgb(235, 235, 235);
+    border: 2px solid rgb(216, 216, 216);
     margin: 50px 50px;
-    padding: 20px 0;
-    border-radius: 25px;
+    padding: 20px 20px;
+    color: rgb(65, 65, 65);
+    border-radius: 5px;
+}
+.add-form-company button {
+    margin-top: 20px;
 }
 .add-company__form {
+    position: absolute;
 }
 .create-form__item {
 }
@@ -31,10 +39,10 @@ span {
 .create-form__btn:last-child {
     margin-left: 10px;
 }
-
 .filial {
 }
 .filial__form {
 }
 .filial__item {
+    margin-top: 15px;
 }

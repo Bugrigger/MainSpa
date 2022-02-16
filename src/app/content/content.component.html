@@ -3,7 +3,9 @@
     (mainCompanyCreate)="createMainCompany($event)">
 </app-create-form>
 
+<h3>Головная организация</h3>
+
 <app-renderMainCompany [mainCompanyList]="mainCompanyList$ |async"></app-renderMainCompany>
-<p>________________________________</p>
+<h3>Филиалы</h3>
 
 <app-renderFilial [filialList]="filialList$ |async"></app-renderFilial>

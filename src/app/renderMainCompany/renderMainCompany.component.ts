@@ -17,4 +17,17 @@ export class RenderMainCompanyComponent implements OnInit {
   ngOnInit() {
   }
 
+  showBtn = 'Показать';
+  hide = false;
+
+  showInfo() {
+    if (!this.hide) {
+      this.hide = true
+      this.showBtn = 'Скрыть'
+    } else {
+      this.hide = false
+      this.showBtn = 'Показать'
+    }
+  }
+
 }

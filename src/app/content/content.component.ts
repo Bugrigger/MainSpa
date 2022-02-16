@@ -24,10 +24,7 @@ export class ContentComponent implements OnInit {
     if (i === 'true') {
       isAdmin = true;
     }
-    console.log(isAdmin);
-
     return isAdmin;
-
   }
 
   filialList$: Observable<any> = this.store$.pipe(select(filialListSelector));

@@ -1,4 +1,4 @@
-<ul>
+<!-- <ul>
   <li *ngFor="let mainCompany of mainCompanyList">
     <p>Полное наименование: {{ mainCompany.fullName }}</p>
     <p>Сокращенное наименование:{{ mainCompany.shortName }}</p>
@@ -8,4 +8,22 @@
     <p>Адрес:{{ mainCompany.mainCompanyAddress }}</p>
     <p>Телефон:{{ mainCompany.mainCompanyPhone }}</p>
   </li>
-</ul>
+</ul> -->
+
+<div class="company-card" *ngFor="let mainCompany of mainCompanyList">
+  <div class="company-card__header">
+    <p class="company-card__titile">{{ mainCompany.fullName }}</p>
+    <button (click)="showInfo()" class="company-card__show-btn btn-outline-info btn">{{ showBtn }}</button>
+  </div>
+  <ul *ngIf="hide" class="company-card__list">
+    <li>
+      <p><b>Полное наименование:</b> {{ mainCompany.fullName }}</p>
+      <p><b>Сокращенное наименование:</b> {{ mainCompany.shortName }}</p>
+      <p><b>ИНН:</b> {{ mainCompany.inn }}</p>
+      <p><b>КПП:</b> {{ mainCompany.kpp }}</p>
+      <p><b>Учредитель(ФИО):</b> {{ mainCompany.ceo }}</p>
+      <p><b>Адрес:</b> {{ mainCompany.mainCompanyAddress }}</p>
+      <p><b>Телефон:</b> {{ mainCompany.mainCompanyPhone }}</p>
+    </li>
+  </ul>
+</div>

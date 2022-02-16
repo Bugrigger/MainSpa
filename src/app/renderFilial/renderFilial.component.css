@@ -1,0 +1,19 @@
+.filial-card {
+    width: 500px;
+    height: auto;
+    background: rgba(223, 223, 223, 0.466);
+    padding: 20px;
+    border-radius: 3px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.filial-card li {
+    list-style: none;
+    margin: 0 0 0 -40px;
+}
+.filial-card ul {
+    margin: 0;
+}
+.filial-card p:last-child {
+    margin: 0;
+}

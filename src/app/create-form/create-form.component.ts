@@ -75,6 +75,8 @@ export class CreateFormComponent implements OnInit {
       mainCompanyAddress: '',
       mainCompanyPhone: ''
     }
+
+    this.mainCompanyForm = false;
   }
 
   createFilial() {
@@ -86,6 +88,7 @@ export class CreateFormComponent implements OnInit {
       filialPhone: '',
       administrator: ''
     };
+    this.secondCompanyForm = false;
   }
 
 

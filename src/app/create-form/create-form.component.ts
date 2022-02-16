@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+import { pipe } from 'rxjs';
 import { statusSelector } from '../reducers/authState';
 
 @Component({
@@ -12,7 +13,9 @@ export class CreateFormComponent implements OnInit {
   constructor(private store: Store) { }
 
   ngOnInit() {
+
   }
+
 
   mainCompanyForm = false;
   secondCompanyForm = false;
@@ -63,18 +66,15 @@ export class CreateFormComponent implements OnInit {
   createMainCompany() {
     this.mainCompanyCreate.emit(this.mainCompanyObj);
 
-    console.log(this.mainCompanyObj);
-
-
-    // this.mainCompanyObj = {
-    //   fullName: '',
-    //   shortName: '',
-    //   inn: '',
-    //   kpp: '',
-    //   ceo: '',
-    //   mainCompanyAddress: '',
-    //   mainCompanyPhone: ''
-    // }
+    this.mainCompanyObj = {
+      fullName: '',
+      shortName: '',
+      inn: '',
+      kpp: '',
+      ceo: '',
+      mainCompanyAddress: '',
+      mainCompanyPhone: ''
+    }
   }
 
   createFilial() {

@@ -1,6 +1,7 @@
 <div class="add__company">
-  <button *ngIf="isAdmin" class="add__btn" (click)="addMianCompany()">Добавить головную организацию</button>
-  <button *ngIf="isAdmin " class="add__btn" (click)="addSecondCompany()">Добавить филиал</button>
+  <button *ngIf="isAdmin" class="btn btn-primary" (click)="addMianCompany()">Добавить головную
+    организацию</button>
+  <button *ngIf="isAdmin" class="btn btn-primary" (click)="addSecondCompany()">Добавить филиал</button>
 </div>
 
 <div *ngIf="mainCompanyForm" class="add-company">

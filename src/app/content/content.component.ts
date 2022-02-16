@@ -18,6 +18,18 @@ export class ContentComponent implements OnInit {
 
   constructor(private store$: Store) { }
 
+  userStatus() {
+    let isAdmin = false;
+    let i = localStorage.getItem('admin');
+    if (i === 'true') {
+      isAdmin = true;
+    }
+    console.log(isAdmin);
+
+    return isAdmin;
+
+  }
+
   filialList$: Observable<any> = this.store$.pipe(select(filialListSelector));
 
   mainCompanyList$: Observable<any> = this.store$.pipe(select(mainCompanyListSelector));

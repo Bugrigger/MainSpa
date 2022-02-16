@@ -1,4 +1,6 @@
-<app-create-form (filialCreate)="createFilial($event)" (mainCompanyCreate)="createMainCompany($event)">
+<app-header></app-header>
+<app-create-form *ngIf="userStatus()" (filialCreate)="createFilial($event)"
+    (mainCompanyCreate)="createMainCompany($event)">
 </app-create-form>
 
 <app-renderMainCompany [mainCompanyList]="mainCompanyList$ |async"></app-renderMainCompany>
